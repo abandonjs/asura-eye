@@ -8,6 +8,7 @@
   "deliver": "/lib/",
   "typings": "lib/index.d.ts",
   "scripts": {
+    "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "git:style": "bash ./config/script/style.bat",
     "commitlint": "commitlint -e",
     "reload": "rimraf node_modules && pnpm install",
@@ -56,6 +57,7 @@
     "@types/node": "^18.11.2",
     "@typescript-eslint/eslint-plugin": "^5.40.1",
     "@typescript-eslint/parser": "^5.40.1",
+    "coveralls": "^3.1.1",
     "eslint": "^8.25.0",
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.1",
