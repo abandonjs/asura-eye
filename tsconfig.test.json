@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"target": "ES5",
+		"types": [
+			"jest"
+		],
+		"allowJs": true,
+		"skipLibCheck": false,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"jsx": "react"
+	}
+}
