@@ -5,5 +5,6 @@ export * from './isString'
 export * from './isTime'
 export * from './isUtil'
 export * from './isObject'
+export * from './isColor'
 
 export * from './type'

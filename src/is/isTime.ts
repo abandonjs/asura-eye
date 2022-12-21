@@ -49,3 +49,7 @@ export function isTime(time: any): boolean {
 	}
 	return time instanceof Date && !isNaN(time.getTime());
 }
+
+// 该方法用于检测给出的日期是否有效：
+// const isDateValid = (...val) => !Number.isNaN(new Date(...val).valueOf());
+// isDateValid("December 17, 1995 03:24:00");  // true
