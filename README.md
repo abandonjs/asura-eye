@@ -14,3 +14,9 @@ npm install check-it-type -D
 ```js
 import { type } from 'check-it-type'
 ```
+
+## 日志
+
+### 0.1.6
+
+- 移除`isSameDate`,  转移至 `abandonjs` 方法中
