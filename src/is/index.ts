@@ -8,3 +8,5 @@ export * from './isObject'
 export * from './isColor'
 
 export * from './type'
+
+export * from './is'
