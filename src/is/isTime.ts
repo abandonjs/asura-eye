@@ -42,8 +42,8 @@ export function likeDate(date: unknown): date is Date {
  * @returns boolean
  * @version 0.1.0
  */
-export function isTime(time: any): boolean {
-	if (type(time) === 'Number') {
+export function isTime(time: unknown): boolean {
+	if (isNumber(time)) {
 		if (time.toString().length === 13) return true
 		if (time.toString().length === 10) return true
 	}

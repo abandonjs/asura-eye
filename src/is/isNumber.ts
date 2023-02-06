@@ -1,5 +1,6 @@
 import { type } from './type'
 import { INFINITY } from '../constants'
+import { isString } from './isString'
 
 /**
  * @title isEffectNumber
@@ -33,7 +34,12 @@ export function isFloat(num: number): boolean {
  */
 export const isNumber = (val: unknown): val is number => type(val) === 'Number'
 
-
+/**
+ * @title isBigInt
+ * @description 是否为bigInt类型
+ * @param value 待检测的数据类型
+ * @returns {boolean}
+ */
 export const isBigInt = (value:unknown): value is bigint => type(value) === 'BigInt'
 
 
@@ -46,13 +52,13 @@ export const isBigInt = (value:unknown): value is bigint => type(value) === 'Big
  * @returns boolean
  * @version 0.1.0
  */
-export function likeNumber(value: any): boolean {
+export function likeNumber(value: unknown): boolean {
 
-	if (type(value) === 'String') {
+	if (isString(value)) {
 		value = value.replaceAll(' ', '')
 	}
 
-	if ([Infinity, null, undefined, '', NaN].includes(value)) return false
+	if ([Infinity, null, undefined, '', NaN].includes(value as any)) return false
 
 	if (Array.isArray(value)) return false
 
