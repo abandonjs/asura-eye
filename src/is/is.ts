@@ -8,27 +8,23 @@ export type ISTYPE = 'Array' | 'Object' | 'Function' | 'AsyncFunction' | 'Genera
 export function IS(type: ISTYPE | ISTYPE[] | Record<string, ISTYPE | ISTYPE[]>) {
 	if (isString(type)) {
 
-		type = type.replaceAll(' ', '')
+		type = type.replace(/ |\n|\t/gi, '')
 
 		if (/^{(.+)}$/.test(type)) {
-
-			const [, newType] = /^{(.+)}$/.exec(type) || [undefined, undefined]
-			const typeObject = {}
-			const list = isString(newType) ? newType.split(/,|:/) : []
-			for (let i = 0; i < list.length; i += 2) {
-				const key = list[i]
-				const value = list[i + 1]
-				typeObject[key] = value
-			}
+			const typeObject = JSON.parse(type.replace(/(\w+)/gi, `"$&"`))
 			return (value: unknown): boolean => {
 				if (!isObject(value)) return false
 				if (Object.keys(value).length !== Object.keys(typeObject).length) return false
 				for (const key in typeObject) {
-					if (ty(value[key]) !== typeObject[key]) return false
+					if (
+						ty(value[key]) !== typeObject[key]
+						&& !IS(typeObject[key])(value[key])
+					) {
+						return false
+					}
 				}
 				return true
 			}
-			console.log({ typeObject })
 		}
 
 		if (/^\[(.+)\]$/.test(type)) {
@@ -58,7 +54,18 @@ export function IS(type: ISTYPE | ISTYPE[] | Record<string, ISTYPE | ISTYPE[]>) 
 	}
 
 	if (isObject(type)) {
-		let result = true
+		return (value: unknown): boolean => {
+			if(!isObject(value)) return false
+			for (const key in type as Record<string, unknown>) {
+				if (
+						ty(value[key]) !== type[key]
+						&& !IS(type[key])(value[key])
+					) {
+						return false
+					}
+			}
+			return true
+		}
 	}
 
 	return (value: unknown): boolean => {
