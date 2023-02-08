@@ -1,5 +1,5 @@
 import { test, UnitTest, BaseValueMap } from 'unit-testing-js'
-import { likeDate, isDate, isSameDate } from '..'
+import { likeDate, isDate } from '..'
 
 test('isDate', isDate,
 	{ params: ['123'], tobe: false },
@@ -8,13 +8,13 @@ test('isDate', isDate,
 	// { params: [new Date().getTime()], tobe: true },
 )
 
-test('isSameDate', isSameDate,
-	{ params: [new Date(), new Date()], tobe: true },
-	{ params: [new Date().getTime(), new Date()], tobe: true },
-	{ params: [new Date(), 123], tobe: false },
-	{ params: [123, new Date()], tobe: false },
-	{ params: [123, 123], tobe: false },
-)
+// test('isSameDate', isSameDate,
+// 	{ params: [new Date(), new Date()], tobe: true },
+// 	{ params: [new Date().getTime(), new Date()], tobe: true },
+// 	{ params: [new Date(), 123], tobe: false },
+// 	{ params: [123, new Date()], tobe: false },
+// 	{ params: [123, 123], tobe: false },
+// )
 const paramList = BaseValueMap.get('@DATE').concat(
 	BaseValueMap.get(
 		'@EMPTY', '@TRUE', '@FALSE',

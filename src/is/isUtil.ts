@@ -111,7 +111,12 @@ export function isExcelFile(fileName: string): boolean {
 
 export const isClient = typeof window !== 'undefined';
 
-
+/**
+ * @title isBoolean
+ * @description 是否为布尔值
+ * @param val {unknown}
+ * @returns {boolean}
+ */
 export const isBoolean = (val: unknown): val is boolean => typeof val === 'boolean';
 
 export const isWindow = (val: unknown): val is Window => typeof window !== 'undefined' && toString.call(val) === '[object Window]';
