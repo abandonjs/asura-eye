@@ -27,27 +27,39 @@ UnitTest((v, b) => is(v)(b), 'is')
 					}
 				}], tobe: true
 		},
-				{
-			params: [`{a: Object, b: {
-			bc: Number
-		}}`, {
+		{
+			params: [{
+				a: 'Object',
+				b: {
+					bc: 'String'
+				}
+			}, {
+				a: {}, b: {
+					bc: 'bbcc'
+				}
+			}], tobe: true
+		},
+		{
+			params: [
+				`{a: Object, b: {
+					bc: Number
+				}}`
+				, {
 					a: {}, b: {
 						bc: 'bbcc'
 					}
 				}], tobe: false
 		},
 		{ params: [{ bc: 'String' }, { bc: 'bcbc' }], tobe: true },
+		{ params: [['String', 'Number'], ['123', '123']], tobe: false },
+		{ params: [['String', 'Number'], ['123']], tobe: false },
+		{ params: [['String', 'Number'], ['123', 123]], tobe: true },
+		{ params: ['String[]', ['123', 123]], tobe: false },
+		{ params: ['String[]', ['123', 'b']], tobe: true },
+
+
+		{ params: ['String|Number', '123'], tobe: true },
+		{ params: ['String|Number', 123], tobe: true },
+		{ params: ['String|Number[]', ['123', 123]], tobe: true },
 	)
 	.run()
-
-// console.log(
-
-// 	JSON.parse((`{a: Object, b: {
-// 			bc: String
-// 		}}`).replace(/ |\n|\t/gi, '').replace(/(\w+)/gi, `"$&"`)),
-// 	JSON.stringify({
-// 		a: {}, b: {
-// 			bc: 'bbcc'
-// 		}
-// 	})
-// )
