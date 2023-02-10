@@ -8,6 +8,7 @@
   "deliver": "/lib/",
   "typings": "lib/index.d.ts",
   "scripts": {
+    "prepare": "husky install",
     "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "git:style": "bash ./config/script/style.bat",
     "commitlint": "commitlint -e",
@@ -52,8 +53,6 @@
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-commonjs": "^23.0.5",
     "@rollup/plugin-node-resolve": "^15.0.1",
-    "@swc/core": "^1.3.23",
-    "@swc/wasm": "^1.3.23",
     "@types/jest": "^29.2.4",
     "@types/node": "^18.11.2",
     "@typescript-eslint/eslint-plugin": "^5.40.1",
@@ -74,6 +73,6 @@
     "ts-node": "^10.9.1",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.8.4",
-    "unit-testing-js": "0.3.3"
+    "unit-testing-js": "0.3.5"
   }
 }
