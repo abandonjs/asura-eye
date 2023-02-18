@@ -7,8 +7,7 @@
  * @returns boolean
  */
 export function isEmpty(value: any): boolean {
-	if (value === undefined || value === null || isNaN(value)) return true
-	return false
+	return value === undefined || value === null || value !== value
 }
 
 /**
