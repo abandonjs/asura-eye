@@ -5,11 +5,15 @@ export type AsyncFunctionType = (...args: unknown[]) => Promise<unknown>
 
 /**
  * @title isFunction
- * @description 是否为普通函数
- * @param value {any}
+ * @description 是否为函数
+ * @param value {unknown}
+ * @param strict {boolean=false} 严格模式
  * @returns {boolean}
  */
-export function isFunction<T extends FunctionType>(value: unknown): value is T {
+export function isFunction<T extends FunctionType>(value: unknown, strict = false): value is T {
+  if (strict) {
+    return typeof value === 'function'
+  }
   return type(value) === 'Function'
 }
 

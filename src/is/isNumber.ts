@@ -1,18 +1,28 @@
 import { type } from './type'
 import { INFINITY } from '../constants'
 import { isString } from './isString'
-import { isEmpty } from './isUtil'
+import { isEmpty } from './empty'
 import { isArray } from './isArray'
+
+/**
+ * @title isNumber
+ * @description 是否为数字
+ * @param value {unknown}
+ * @returns {boolean}
+ */
+export const isNumber = (value: unknown): value is number => {
+	return typeof value === 'number' && type(value) === 'Number'
+}
 
 /**
  * @title isEffectNumber
  * @description 是否为js的有效区间的数, 非number类型都为false
- * @param num
+ * @param value {unknown}
  * @returns boolean
  */
-export function isEffectNumber(num: unknown): boolean {
-	if (type(num) === 'Number') {
-		if (num === INFINITY || num === -INFINITY) return false
+export function isEffectNumber(value: unknown): boolean {
+	if (type(value) === 'Number') {
+		if (value === INFINITY || value === -INFINITY) return false
 		return true
 	}
 	return false
@@ -25,17 +35,9 @@ export function isEffectNumber(num: unknown): boolean {
  * @returns boolean
  */
 export function isFloat(num: unknown): boolean {
-	if(!isNumber(num)) return false
+	if (!isNumber(num)) return false
 	return (num % 1) !== 0
 }
-
-/**
- * @title isNumber
- * @description 是否为数字
- * @param num 待检测的数据类型
- * @returns {boolean}
- */
-export const isNumber = (val: unknown): val is number => type(val) === 'Number'
 
 /**
  * @title isBigInt
@@ -65,7 +67,6 @@ export function likeNumber(value: unknown): boolean {
 		isEmpty(value)
 		|| isArray(value)
 		|| value === ''
-		|| isNaN(Number(value))
 	) return false
 
 	if (Number.isNaN(Number(value)) === false) {

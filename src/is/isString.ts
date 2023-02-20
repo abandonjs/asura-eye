@@ -3,7 +3,7 @@ import { isObject } from './isObject'
 /**
  * @title isString
  * @description 是否为字符串
- * @param value {any}
+ * @param value {unknown}
  * @returns {boolean}
  */
 export function isString(value: unknown): value is string {

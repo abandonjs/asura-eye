@@ -53,7 +53,6 @@ export function IS(type: ISTYPE | ISTYPE[] | Record<string, ISTYPE | ISTYPE[]>) 
 						ty(value[i]) !== newType
 						&& !IS(newType as string)(value[i])
 					){
-						console.log(ty(value[i]), newType)
 						return false
 					} 
 

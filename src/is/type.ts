@@ -1,19 +1,26 @@
 import { isArray } from "./isArray"
+import { isIterator } from "./iterator"
 
 /**
  * @title type
  * @description 获取类型
  * @param param {unknown} 参数
  * @return string 类型名称
+ * @lastUpdate 0.2.0
  */
 export type typeResult = 'Array' | 'Object' | 'Function' | 'AsyncFunction' | 'GeneratorFunction' | 'String' | 'Number' | 'NaN' | 'RegExp' | 'Date' | 'Undefined' | string
 
 export function type(param: unknown): typeResult {
-  const result: string = Object.prototype.toString
-    .call(param)
-    .match(/\[object (\w+)\]/)[1]
-  if (result === 'Number' && isNaN(param as number)) return 'NaN'
-  return result
+  try {
+    if (isIterator(param)) return 'Iterator'
+    const result: string = Object.prototype.toString
+      .call(param)
+      .match(/\[object (\w+)\]/)[1]
+    if (result === 'Number' && isNaN(param as number)) return 'NaN'
+    return result
+  } catch (error) {
+    return 'Undefined'
+  }
 }
 
 /**

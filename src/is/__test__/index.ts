@@ -1,3 +1,4 @@
+import './iterator'
 import './isArray'
 import './isFunction'
 import './isNumber'
