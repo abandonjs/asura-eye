@@ -20,7 +20,7 @@ export const FileTypeMap = new Map<FileType, string[]>([
 
 /**
  * @title isFileExtension
- * @description 是否为指定字符串结尾
+ * @description 是指定字符串结尾
  * @param fileName string 文件名
  * @param list string[] 文件拓展名数组
  * @returns boolean
@@ -100,7 +100,7 @@ export const isClient = typeof window !== 'undefined';
 
 /**
  * @title isBoolean
- * @description 是否为布尔值
+ * @description 是布尔值
  * @param val {unknown}
  * @returns {boolean}
  */

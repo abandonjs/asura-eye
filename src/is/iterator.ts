@@ -2,7 +2,7 @@ import { isEmpty } from "./empty"
 
 /**
  * @title isIterator
- * @description 判断是否为iterator
+ * @description 是iterator
  * @param value {unknown}
  * @returns {boolean}
  */
@@ -13,7 +13,7 @@ export function isIterator(value: unknown): value is IterableIterator<unknown> {
 
 /**
  * @title isArrayIterator
- * @description 判断是否为 Array Iterator
+ * @description 是 Array Iterator
  * @param value {unknown}
  * @returns {boolean}
  */
@@ -24,7 +24,7 @@ export function isArrayIterator(value: unknown): value is IterableIterator<[numb
 
 /**
  * @title isMapIterator
- * @description 判断是否为 Map Iterator
+ * @description 是 Map Iterator
  * @param value {unknown}
  * @returns {boolean}
  */
@@ -35,7 +35,7 @@ export function isMapIterator(value: unknown): value is IterableIterator<[unknow
 
 /**
  * @title isSetIterator
- * @description 判断是否为 Set Iterator
+ * @description 是 Set Iterator
  * @param value {unknown}
  * @returns {boolean}
  */
