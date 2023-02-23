@@ -2,6 +2,7 @@
 test/
 lib/
 src/*/__test__
+src/__test__
 md.ts
 rollup.config.ts
 config/

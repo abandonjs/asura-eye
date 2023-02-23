@@ -1,7 +1,23 @@
-import { isFunction, isAsyncFunction, likeFunction } from '..'
+import { isFunction, isEffectFunction, isAsyncFunction, likeFunction, isEmptyFunction } from '..'
 import { BaseValueMap, UnitTest } from 'unit-testing-js'
 
 const funcList = BaseValueMap.get('@FUNCTION')
+
+UnitTest(isEmptyFunction)
+	.addCases(
+		{ param: function () { return true }, tobe: false },
+		{ param: function () { }, tobe: true },
+		{ param: "function(){return true}", tobe: false },
+	)
+	.run()
+
+UnitTest(isEffectFunction)
+	.addCases(
+		{ param: function () { return true }, tobe: true },
+		{ param: function () { }, tobe: false },
+		{ param: "function(){return true}", tobe: false },
+	)
+	.run()
 
 UnitTest(isFunction)
 	.addParamMap(funcList)
@@ -22,7 +38,6 @@ UnitTest(isAsyncFunction)
 	})
 	.buildCases()
 	.run()
-
 
 UnitTest(likeFunction)
 	.addParamMap(funcList)

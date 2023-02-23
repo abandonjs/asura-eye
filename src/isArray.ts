@@ -16,7 +16,7 @@ export const isArray = Array.isArray
  */
 export function isEmptyArray(list: unknown): list is unknown {
 	if (isEmpty(list)) return false
-	return isArray(list) && list.length > 0
+	return isArray(list) && list.length === 0
 }
 
 /**

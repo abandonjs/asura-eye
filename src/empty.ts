@@ -16,7 +16,7 @@ export function isEmpty(value: unknown): value is (undefined | null) {
  * @version 0.3.0
  */
 export function isNoEmpty(value: unknown): value is (undefined | null) {
-	return value !== undefined || value !== null || value === value
+	return value !== undefined && value !== null && value === value
 }
 
 /**

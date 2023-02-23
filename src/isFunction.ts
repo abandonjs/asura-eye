@@ -48,7 +48,7 @@ export function likeFunction<T extends FunctionType | AsyncFunctionType>(value: 
  */
 export function isEmptyFunction(value: unknown): value is unknown {
   if (isEmpty(value)) return false
-  return isFunction(value) && /\{\}$/.test(value.toString())
+  return isFunction(value) && /\{\}$/.test(value.toString().replaceAll(' ', ''))
 }
 
 /**
@@ -60,5 +60,5 @@ export function isEmptyFunction(value: unknown): value is unknown {
  */
 export function isEffectFunction(value: unknown): value is FunctionType {
   if (isEmpty(value)) return false
-  return isFunction(value) && /\{.+\}$/.test(value.toString())
+  return isFunction(value) && /\{.+\}$/.test(value.toString().replaceAll(' ', ''))
 }

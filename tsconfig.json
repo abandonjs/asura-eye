@@ -22,8 +22,6 @@
   "include": ["./src/**/*", "*.d.ts"],
   "exclude": [
     "./config/**/*",
-    "./src/__test__/*.ts",
-    "**/*/md.ts",
-    "**/*/*.md",
+    "./src/__test__/**/*"
   ]
 }

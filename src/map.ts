@@ -16,7 +16,7 @@ export const isMap = (value: unknown): value is Map<string, unknown> => type(val
  */
 export function isEmptyMap(value: unknown): value is unknown {
 	if (isEmpty(value)) return false
-	return isMap(value) && !isUndefined(value.keys().next().value)
+	return isMap(value) && isUndefined(value.keys().next().value)
 }
 
 /**

@@ -10,8 +10,6 @@ const cmmCases = (handler) => isFunction(handler) ? [
 	param: handler(item), tobe: false
 }))) : []
 
-console.log(Object.entries({}))
-
 UnitTest(toBe, 'isIterator')
 	.addCases(
 		// true
