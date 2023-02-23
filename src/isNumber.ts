@@ -1,5 +1,5 @@
 import { type } from './type'
-import { INFINITY } from '../constants'
+import { INFINITY } from './constants'
 import { isString } from './isString'
 import { isEmpty } from './empty'
 import { isArray } from './isArray'
