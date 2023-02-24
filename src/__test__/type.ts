@@ -1,4 +1,4 @@
-import { test } from 'unit-testing-js'
+import { test, toBe } from 'unit-testing-js'
 import * as _ from '..'
 
 test('type', _.type,
@@ -18,6 +18,12 @@ test('type', _.type,
 	{ param: /a/, tobe: 'RegExp' },
 	{ param: new Date(), tobe: 'Date' },
 	{ param: undefined, tobe: 'Undefined' },
+)
+
+test('type:Iterator', toBe,
+	{ param: _.type([1, 23].keys()), tobe: 'Iterator' },
+	{ param: _.type([1, 23].entries()), tobe: 'Iterator' },
+	{ param: _.type([1, 23].values()), tobe: 'Iterator' },
 )
 
 test('types', _.types,

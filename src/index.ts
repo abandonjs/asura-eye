@@ -1,2 +1,22 @@
+export * from './isArray'
+export * from './isFunction'
+export * from './isNumber'
+export * from './isString'
+export * from './isTime'
+export * from './isUtil'
+export * from './isObject'
+export * from './isColor'
+export * from './isRegExp'
+export * from './empty'
+export * from './symbol'
+export * from './error'
+export * from './set'
+export * from './map'
+export * from './promise'
+export * from './iterator'
 
+export * from './type'
 export * from './is'
+
+export * from './constants'
+

@@ -4,6 +4,7 @@
 
 <!-- - [Api docs](https://guanruihua.github.io/OpenSource/abandonjs/index.html#/) -->
 - 类型判断方法的封装
+- 日常开发太少用到的类型, 不添加
 
 ## 使用
 
@@ -12,8 +13,12 @@ npm install check-it-type -D
 ```
 
 ```js
-import { type } from 'check-it-type'
+import { type, isFunction } from 'check-it-type'
 ```
+
+## 参考
+
+> - <https://github.com/nodejs/node/blob/v18.0.0/lib/util.js>
 
 ## 日志
 

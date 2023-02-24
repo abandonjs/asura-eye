@@ -1,16 +1,3 @@
-// RegExp
-
-/**
- * @title isEmpty
- * @description 判断是否为无效值 undefined , null, NaN
- * @param value any 待判断值
- * @returns boolean
- */
-export function isEmpty(value: any): boolean {
-	if (value === undefined || value === null || isNaN(value)) return true
-	return false
-}
-
 /**
  * @title FileType
  * @description 文件名后缀, 仅识别数字和字母组成的文件拓展名后缀
@@ -33,7 +20,7 @@ export const FileTypeMap = new Map<FileType, string[]>([
 
 /**
  * @title isFileExtension
- * @description 是否为指定字符串结尾
+ * @description 是指定字符串结尾
  * @param fileName string 文件名
  * @param list string[] 文件拓展名数组
  * @returns boolean
@@ -113,7 +100,7 @@ export const isClient = typeof window !== 'undefined';
 
 /**
  * @title isBoolean
- * @description 是否为布尔值
+ * @description 是布尔值
  * @param val {unknown}
  * @returns {boolean}
  */
