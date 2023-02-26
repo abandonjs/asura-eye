@@ -14,7 +14,7 @@ export const isArray = Array.isArray
  * @param list {unknown}
  * @returns {boolean}
  */
-export function isEmptyArray(list: unknown): list is unknown {
+export function isEmptyArray(list: unknown): list is [] {
 	if (isEmpty(list)) return false
 	return isArray(list) && list.length === 0
 }
@@ -25,7 +25,7 @@ export function isEmptyArray(list: unknown): list is unknown {
  * @param list {unknown}
  * @returns {boolean}
  */
-export function isEffectArray(list: unknown): list is unknown[] {
+export function isEffectArray<T = unknown>(list: unknown): list is T[] {
 	if (isEmpty(list)) return false
 	return isArray(list) && list.length > 0
 }

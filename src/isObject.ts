@@ -7,7 +7,7 @@ import { type } from "./type"
  * @param value {unknown}
  * @returns {boolean}
  */
-export function isObject(value: unknown): value is Record<string, unknown> {
+export function isObject<Value = unknown>(value: unknown): value is Record<string, Value> {
 	return value !== null && typeof value === 'object' && type(value) === 'Object'
 }
 
@@ -17,7 +17,7 @@ export function isObject(value: unknown): value is Record<string, unknown> {
  * @param value {unknown}
  * @returns {boolean}
  */
-export function isEmptyObject(value: unknown): value is unknown {
+export function isEmptyObject(value: unknown): value is Record<string, never> {
 	if (isEmpty(value)) return false
 	return isObject(value) && Reflect.ownKeys(value).length === 0
 }
@@ -29,7 +29,7 @@ export function isEmptyObject(value: unknown): value is unknown {
  * @param value {unknown}
  * @returns {boolean}
  */
-export function isEffectObject(value: unknown): value is Record<string, unknown> {
+export function isEffectObject<Value = unknown>(value: unknown): value is Record<string, Value> {
 	if (isEmpty(value)) return false
 	return isObject(value) && Reflect.ownKeys(value).length !== 0
 }
