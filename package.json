@@ -1,6 +1,6 @@
 {
   "name": "check-it-type",
-  "version": "0.4.0",
+  "version": "0.4.3",
   "description": "类型判断方法包",
   "module": "lib/index.esm.js",
   "main": "lib/index.js",
@@ -40,10 +40,10 @@
   "engines": {
     "node": ">=16"
   },
-  "bugs": "https://github.com/abandonjs/check-it-type/issues",
+  "bugs": "https://github.com/unit-testing-js/check-it-type/issues",
   "repository": {
     "type": "git",
-    "url": "git@github.com:abandonjs/check-it-type.git"
+    "url": "git@github.com:unit-testing-js/check-it-type.git"
   },
   "author": "ruihuag",
   "license": "MIT",

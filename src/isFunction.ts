@@ -2,6 +2,7 @@ import { isEmpty } from './empty'
 import { type } from './type'
 
 export type FunctionType = (...args: unknown[]) => unknown
+export type EmptyFunctionType = () => void
 export type AsyncFunctionType = (...args: unknown[]) => Promise<unknown>
 
 /**
@@ -46,7 +47,7 @@ export function likeFunction<T extends FunctionType | AsyncFunctionType>(value: 
  * @returns {boolean}
  * @version 0.4.0
  */
-export function isEmptyFunction(value: unknown): value is unknown {
+export function isEmptyFunction(value: unknown): value is EmptyFunctionType {
   if (isEmpty(value)) return false
   return isFunction(value) && /\{\}$/.test(value.toString().replaceAll(' ', ''))
 }
@@ -58,7 +59,7 @@ export function isEmptyFunction(value: unknown): value is unknown {
  * @returns {boolean}
  * @version 0.4.0
  */
-export function isEffectFunction(value: unknown): value is FunctionType {
+export function isEffectFunction<T = FunctionType>(value: unknown): value is T {
   if (isEmpty(value)) return false
   return isFunction(value) && /\{.+\}$/.test(value.toString().replaceAll(' ', ''))
 }

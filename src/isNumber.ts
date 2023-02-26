@@ -20,7 +20,7 @@ export const isNumber = (value: unknown): value is number => {
  * @param value {unknown}
  * @returns boolean
  */
-export function isEffectNumber(value: unknown): boolean {
+export function isEffectNumber(value: unknown): value is number {
 	if (type(value) === 'Number') {
 		if (value === INFINITY || value === -INFINITY) return false
 		return true
@@ -31,12 +31,12 @@ export function isEffectNumber(value: unknown): boolean {
 /**
  * @title isFloat
  * @description 判断数是浮点型
- * @param num 待检测的数据类型
+ * @param value {unknown} 待检测的数据类型
  * @returns boolean
  */
-export function isFloat(num: unknown): boolean {
-	if (!isNumber(num)) return false
-	return (num % 1) !== 0
+export function isFloat(value: unknown): value is number {
+	if (!isNumber(value)) return false
+	return (value % 1) !== 0
 }
 
 /**
@@ -57,7 +57,7 @@ export const isBigInt = (value: unknown): value is bigint => type(value) === 'Bi
  * @returns boolean
  * @version 0.1.0
  */
-export function likeNumber(value: unknown): boolean {
+export function likeNumber(value: unknown): value is `${number}` {
 
 	if (isNumber(value)) return true
 

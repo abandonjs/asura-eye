@@ -6,6 +6,6 @@ import { type } from "./type"
  * @param value {unknown}
  * @returns {boolean}
  */
-export const isPromise = (value: unknown): value is Promise<unknown> => {
+export function isPromise<T = unknown>(value: unknown): value is Promise<T> {
   return type(value) === 'Promise'
 }
