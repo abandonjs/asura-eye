@@ -1,6 +1,6 @@
 {
-  "name": "check-it-type",
-  "version": "0.4.3",
+  "name": "asura-eye",
+  "version": "0.5.0",
   "description": "类型判断方法包",
   "module": "lib/index.esm.js",
   "main": "lib/index.js",
@@ -48,6 +48,7 @@
   "author": "ruihuag",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.21.3",
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
     "@rollup/plugin-babel": "^6.0.3",

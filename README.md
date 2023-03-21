@@ -1,6 +1,6 @@
-# check-it-type
+# asura-eye
 
-![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg) [![npm version](https://img.shields.io/npm/v/check-it-type.svg?style=flat)](https://www.npmjs.com/package/check-it-type)
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg) [![npm version](https://img.shields.io/npm/v/asura-eye.svg?style=flat)](https://www.npmjs.com/package/asura-eye)
 
 <!-- - [Api docs](https://guanruihua.github.io/OpenSource/abandonjs/index.html#/) -->
 - 类型判断方法的封装
@@ -9,11 +9,11 @@
 ## 使用
 
 ```shell
-npm install check-it-type -D
+npm install asura-eye -D
 ```
 
 ```js
-import { type, isFunction } from 'check-it-type'
+import { type, isFunction } from 'asura-eye'
 ```
 
 ## 参考
