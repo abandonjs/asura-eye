@@ -14,6 +14,7 @@ export * from './set'
 export * from './map'
 export * from './promise'
 export * from './iterator'
+export * from './isInstance'
 
 export * from './type'
 export * from './is'
