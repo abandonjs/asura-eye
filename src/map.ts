@@ -6,7 +6,7 @@ import { type } from './type'
  * @param value {unknown}
  * @returns {boolean}
  */
-export function isMap<T = unknown>(value: unknown): value is Map<string, T> {
+export function isMap<Key = unknown, Value = unknown>(value: unknown): value is Map<Key, Value> {
 	return type(value) === 'Map'
 }
 
@@ -16,7 +16,7 @@ export function isMap<T = unknown>(value: unknown): value is Map<string, T> {
  * @param value {unknown}
  * @returns {boolean}
  */
-export function isEmptyMap(value: unknown): value is Map<string, never> {
+export function isEmptyMap(value: unknown): value is Map<unknown, never> {
 	if (isEmpty(value)) return false
 	return isMap(value) && isUndefined(value.keys().next().value)
 }
@@ -27,7 +27,7 @@ export function isEmptyMap(value: unknown): value is Map<string, never> {
  * @param value {unknown}
  * @returns {boolean}
  */
-export function isEffectMap<Value = unknown>(value: unknown): value is Map<string, Value> {
+export function isEffectMap<Key = unknown, Value = unknown>(value: unknown): value is Map<Key, Value> {
 	if (isEmpty(value)) return false
 	return isMap(value) && !isEmpty(value.keys().next().value)
 }
