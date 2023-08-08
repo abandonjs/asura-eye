@@ -40,6 +40,17 @@ export function isFloat(value: unknown): value is number {
 }
 
 /**
+ * @title isInteger
+ * @description 判断数是整型
+ * @param value {unknown} 待检测的数据类型
+ * @returns boolean
+ */
+export function isInteger(value: unknown): value is number {
+	if (!isNumber(value)) return false
+	return (value % 1) === 0
+}
+
+/**
  * @title isBigInt
  * @description 是bigInt类型
  * @param value 待检测的数据类型

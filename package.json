@@ -1,6 +1,6 @@
 {
   "name": "asura-eye",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "类型判断方法包",
   "module": "lib/index.esm.js",
   "main": "lib/index.js",
@@ -21,6 +21,7 @@
     "eslint": "eslint . --ext .ts",
     "eslint:fix": "eslint . --ext .ts --fix",
     "pub": "npm publish",
+    "git": "node config/script/git.js",
     "nocache": "jest --no-cache",
     "watch": "jest --watchAll",
     "jest": "jest --coverage",
@@ -57,6 +58,7 @@
     "@types/node": "^18.11.2",
     "@typescript-eslint/eslint-plugin": "^5.40.1",
     "@typescript-eslint/parser": "^5.40.1",
+    "command-go": "^0.1.1",
     "coveralls": "^3.1.1",
     "eslint": "^8.25.0",
     "eslint-plugin-prettier": "^4.2.1",
