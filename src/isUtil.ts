@@ -21,8 +21,8 @@ export const FileTypeMap = new Map<FileType, string[]>([
 /**
  * @title isFileExtension
  * @description 是指定字符串结尾
- * @param fileName string 文件名
- * @param list string[] 文件拓展名数组
+ * @param {string} fileName 文件名
+ * @param {string[]} list 文件拓展名数组
  * @returns boolean
  * @version 0.1.0
  */
@@ -36,9 +36,9 @@ export function isFileExtension(fileName: string, list: string[] = []): boolean 
 
 /**
  * @title isFile
- * @param fileName string
- * @param type {FileType}
- * @returns boolean
+ * @param {string} fileName
+ * @param {FileType} type 
+ * @returns {boolean}
  * @version 0.1.0
  */
 export function isFile(fileName: string, type: FileType): boolean {
@@ -47,8 +47,8 @@ export function isFile(fileName: string, type: FileType): boolean {
 
 /**
  * @title isImageFile
- * @param fileName string
- * @returns boolean
+ * @param {string} fileName
+ * @returns {boolean}
  * @version 0.1.0
  */
 export function isImageFile(fileName: string): boolean {
@@ -57,8 +57,8 @@ export function isImageFile(fileName: string): boolean {
 
 /**
  * @title isVideoFile
- * @param fileName string
- * @returns boolean
+ * @param {string} fileName
+ * @returns {boolean}
  * @version 0.1.0
  */
 export function isVideoFile(fileName: string): boolean {
@@ -67,8 +67,8 @@ export function isVideoFile(fileName: string): boolean {
 
 /**
  * @title isPdfFile
- * @param fileName string
- * @returns boolean
+ * @param {string} fileName
+ * @returns {boolean}
  * @version 0.1.0
  */
 export function isPdfFile(fileName: string): boolean {
@@ -77,8 +77,8 @@ export function isPdfFile(fileName: string): boolean {
 
 /**
  * @title isWordFile
- * @param fileName string
- * @returns boolean
+ * @param {string} fileName
+ * @returns {boolean}
  * @version 0.1.0
  */
 export function isWordFile(fileName: string): boolean {
@@ -87,25 +87,46 @@ export function isWordFile(fileName: string): boolean {
 
 /**
  * @title isExcelFile
- * @param fileName string
- * @returns boolean
+ * @param {string} fileName
+ * @returns {boolean}
  * @version 0.1.0
  */
 export function isExcelFile(fileName: string): boolean {
 	return isFileExtension(fileName, FileTypeMap.get('Excel'))
 }
 
-
+/**
+ * @title isClient
+ * @description 是否为客户端
+ */
 export const isClient = typeof window !== 'undefined';
 
 /**
  * @title isBoolean
  * @description 是布尔值
- * @param val {unknown}
+ * @param {unknown} val
  * @returns {boolean}
  */
 export const isBoolean = (val: unknown): val is boolean => typeof val === 'boolean';
 
+/**
+ * @title isWindow
+ * @description 是否为window端
+ * @param {unknown} val 
+ * @returns {boolean}
+ */
 export const isWindow = (val: unknown): val is Window => typeof window !== 'undefined' && toString.call(val) === '[object Window]';
-export const isIOS = /* #__PURE__ */ isClient && window?.navigator?.userAgent && /iP(ad|hone|od)/.test(window.navigator.userAgent);
+
+/**
+ * @title isIOS
+ * @returns {boolean}
+ */
+export const isIOS = /* #__PURE__ */ isClient && window?.navigator?.userAgent && /iP(ad|hone|od)/.test(window.navigator.userAgent)
+
+/**
+ * @title hasOwn
+ * @param {object} val 
+ * @param {string} key 
+ * @returns {boolean}
+ */
 export const hasOwn = <T extends object, K extends keyof T>(val: T, key: K): key is K => Object.prototype.hasOwnProperty.call(val, key);

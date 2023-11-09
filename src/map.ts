@@ -3,7 +3,7 @@ import { type } from './type'
 
 /**
  * @title isMap
- * @param value {unknown}
+ * @param {unknown} value
  * @returns {boolean}
  */
 export function isMap<Key = unknown, Value = unknown>(value: unknown): value is Map<Key, Value> {
@@ -13,7 +13,7 @@ export function isMap<Key = unknown, Value = unknown>(value: unknown): value is 
 /**
  * @title isEmptyMap
  * @description 是空Map
- * @param value {unknown}
+ * @param {unknown} value
  * @returns {boolean}
  */
 export function isEmptyMap(value: unknown): value is Map<unknown, never> {
@@ -24,7 +24,7 @@ export function isEmptyMap(value: unknown): value is Map<unknown, never> {
 /**
  * @title isEffectMap
  * @description 是有效Map
- * @param value {unknown}
+ * @param {unknown} value
  * @returns {boolean}
  */
 export function isEffectMap<Key = unknown, Value = unknown>(value: unknown): value is Map<Key, Value> {

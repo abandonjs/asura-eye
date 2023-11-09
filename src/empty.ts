@@ -11,7 +11,7 @@ export function isEmpty(value: unknown): value is (undefined | null) {
 /**
  * @title isNoEmpty<T>
  * @description 不是是无效值 undefined , null, NaN
- * @param value {unknown}
+ * @param {unknown} value
  * @returns {boolean}
  * @version 0.3.0
  */
@@ -21,7 +21,7 @@ export function isNoEmpty<T = unknown>(value: unknown): value is T {
 
 /**
  * @title isNull
- * @param value {unknown}
+ * @param {unknown} value
  * @returns {boolean}
  */
 export function isNull(value: unknown): value is null {
@@ -30,7 +30,7 @@ export function isNull(value: unknown): value is null {
 
 /**
  * @title isNoNull<T>
- * @param value {unknown}
+ * @param {unknown} value
  * @returns {boolean}
  */
 export function isNoNull<T = unknown>(value: unknown): value is T {
@@ -39,7 +39,7 @@ export function isNoNull<T = unknown>(value: unknown): value is T {
 
 /**
  * @title isUndefined
- * @param value {unknown}
+ * @param {unknown} value
  * @returns {boolean}
  */
 export function isUndefined(value: unknown): value is undefined {
@@ -48,7 +48,7 @@ export function isUndefined(value: unknown): value is undefined {
 
 /**
  * @title isNoUndefined<T>
- * @param value {unknown}
+ * @param {unknown} value
  * @returns {boolean}
  */
 export function isNoUndefined<T = unknown>(value: unknown): value is T {
@@ -57,7 +57,7 @@ export function isNoUndefined<T = unknown>(value: unknown): value is T {
 
 /**
  * @title isNaN
- * @param value {unknown}
+ * @param {unknown} value
  * @returns {boolean}
  */
 export const isNaN = Number.isNaN

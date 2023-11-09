@@ -8,7 +8,7 @@ export type TimeKey = 'year' | 'mouth' | 'day' | 'hour' | 'minute' | 'second' | 
 /**
  * @title isDate
  * @description 检查日期是否有效
- * @param date {any} 待判断日期
+ * @param {unknown} date 待判断日期
  * @returns {boolean}
  * @version 0.1.0
  */
@@ -19,7 +19,7 @@ export function isDate(date: unknown): date is Date {
 /**
  * @title likeDate
  * @description 检查日期是否有效, 时间戳也为有效时间(13位/10位)
- * @param date {any}
+ * @param {unknown} date
  * @returns {boolean}
  */
 export function likeDate(date: unknown): date is Date {
@@ -38,8 +38,8 @@ export function likeDate(date: unknown): date is Date {
 /**
  * @title isTime
  * @description 检查日期是否有效, 时间戳也为有效时间(13位/10位)
- * @param time:any 待判断日期
- * @returns boolean
+ * @param {unknown} time 待判断日期
+ * @returns {boolean}
  * @version 0.1.0
  */
 export function isTime(time: unknown): boolean {

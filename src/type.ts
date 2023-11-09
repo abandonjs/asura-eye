@@ -4,8 +4,8 @@ import { isIterator } from "./iterator"
 /**
  * @title type
  * @description 获取类型
- * @param param {unknown} 参数
- * @return string 类型名称
+ * @param {unknown} param 参数
+ * @return {string} 类型名称
  * @lastUpdate 0.2.0
  */
 export type typeResult = 'Array' | 'Object' | 'Function' | 'AsyncFunction' | 'GeneratorFunction' | 'String' | 'Number' | 'NaN' | 'RegExp' | 'Date' | 'Undefined' | string
@@ -26,11 +26,11 @@ export function type(param: unknown): typeResult {
 /**
  * @title types
  * @description 获取类型数组
- * @param params {unknown[]} 待判断的参数列表
- * @param hasRepeat=false 保留重复类型
- * @return string[] 类型名称
+ * @param {unknown[]} params 待判断的参数列表
+ * @param {boolean} [hasRepeat=false] 保留重复类型
+ * @return {string[]} 类型名称
  */
-export function types(params: unknown[], hasRepeat = false): typeResult[] {
+export function types(params: unknown[], hasRepeat: boolean = false): typeResult[] {
   if (!isArray(params)) return []
   const result = params.map(i => type(i)) || []
   return hasRepeat ? result : [...new Set(result)]

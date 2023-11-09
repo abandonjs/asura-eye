@@ -8,8 +8,8 @@ export type AsyncFunctionType = (...args: unknown[]) => Promise<unknown>
 /**
  * @title isFunction
  * @description 是函数
- * @param value {unknown}
- * @param strict {boolean=false} 严格模式
+ * @param {unknown} value
+ * @param {boolean} [strict=false] 严格模式
  * @returns {boolean}
  */
 export function isFunction<T extends FunctionType>(value: unknown, strict = false): value is T {
@@ -22,7 +22,7 @@ export function isFunction<T extends FunctionType>(value: unknown, strict = fals
 /**
  * @title isAsyncFunction
  * @description 是异步函数
- * @param value {any}
+ * @param {unknown} value
  * @returns {boolean}
  */
 export function isAsyncFunction<T extends AsyncFunctionType>(value: unknown): value is T {
@@ -32,7 +32,7 @@ export function isAsyncFunction<T extends AsyncFunctionType>(value: unknown): va
 /**
  * @title likeFunction
  * @description 是函数
- * @param value {any}
+ * @param {unknown} value
  * @returns {boolean}
  * @version 0.4.0
  */
@@ -43,7 +43,7 @@ export function likeFunction<T extends FunctionType | AsyncFunctionType>(value: 
 /**
  * @title isEmptyFunction
  * @description 是空方法
- * @param value {unknown}
+ * @param {unknown} value
  * @returns {boolean}
  * @version 0.4.0
  */
@@ -55,7 +55,7 @@ export function isEmptyFunction(value: unknown): value is EmptyFunctionType {
 /**
  * @title isEffectFunction
  * @description 是有效方法(非空方法)
- * @param value {unknown}
+ * @param {unknown} value
  * @returns {boolean}
  * @version 0.4.0
  */

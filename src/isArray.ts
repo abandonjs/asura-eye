@@ -6,7 +6,10 @@ import { isEmpty } from "./empty"
  * @param value {unknown}
  * @returns {boolean}
  */
-export const isArray = Array.isArray
+export function isArray<T = any>(list: unknown): list is T[] {
+	return Array.isArray(list)
+}
+// export const isArray = Array.isArray
 
 /**
  * @title isEmptyArray

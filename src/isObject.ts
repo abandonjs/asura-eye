@@ -4,7 +4,7 @@ import { type } from "./type"
 /**
  * @title isObject
  * @description 是Object
- * @param value {unknown}
+ * @param {unknown} value
  * @returns {boolean}
  */
 export function isObject<Value = unknown>(value: unknown): value is Record<string, Value> {
@@ -14,7 +14,7 @@ export function isObject<Value = unknown>(value: unknown): value is Record<strin
 /**
  * @title isEmptyObject
  * @description 是空Object
- * @param value {unknown}
+ * @param {unknown} value
  * @returns {boolean}
  */
 export function isEmptyObject(value: unknown): value is Record<string, never> {
@@ -26,7 +26,7 @@ export function isEmptyObject(value: unknown): value is Record<string, never> {
 /**
  * @title isEffectObject
  * @description 是有效Object(非空)
- * @param value {unknown}
+ * @param {unknown} value
  * @returns {boolean}
  */
 export function isEffectObject<Value = unknown>(value: unknown): value is Record<string, Value> {

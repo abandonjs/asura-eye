@@ -3,7 +3,7 @@ import { isObject } from './isObject'
 /**
  * @title isString
  * @description 是字符串
- * @param value {unknown}
+ * @param {unknown} value
  * @returns {boolean}
  */
 export function isString(value: unknown): value is string {
@@ -13,14 +13,14 @@ export function isString(value: unknown): value is string {
 /**
  * @title isJsonString<T>
  * @description 是json字符串, 若是并返回处理后的对象
- * @param val 待判断字符串
- * @returns T | false
+ * @param {unknown} val 待判断字符串
+ * @returns {boolean}
  */
-export function isJsonString<T extends Record<string, unknown>>(val: unknown): T | false {
+export function isJsonString<T extends Record<string, unknown>>(val: unknown): val is T {
 	if (!isString(val)) return false
 	try {
 		const obj: T = JSON.parse(val)
-		return isObject(obj) && obj
+		return isObject<T>(obj)
 	} catch (e) {
 		return false
 	}

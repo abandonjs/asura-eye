@@ -1,6 +1,6 @@
 /**
  * @title isSymbol
- * @param value {unknown}
+ * @param {unknown} value
  * @returns {boolean}
  */
 export function isSymbol(value: unknown): value is symbol {

@@ -7,7 +7,7 @@ import { isArray } from './isArray'
 /**
  * @title isNumber
  * @description 是数字
- * @param value {unknown}
+ * @param {unknown} value
  * @returns {boolean}
  */
 export const isNumber = (value: unknown): value is number => {
@@ -17,8 +17,8 @@ export const isNumber = (value: unknown): value is number => {
 /**
  * @title isEffectNumber
  * @description 是js的有效区间的数, 非number类型都为false
- * @param value {unknown}
- * @returns boolean
+ * @param {unknown} value
+ * @returns {boolean}
  */
 export function isEffectNumber(value: unknown): value is number {
 	if (type(value) === 'Number') {
@@ -31,8 +31,8 @@ export function isEffectNumber(value: unknown): value is number {
 /**
  * @title isFloat
  * @description 判断数是浮点型
- * @param value {unknown} 待检测的数据类型
- * @returns boolean
+ * @param {unknown} value 待检测的数据类型
+ * @returns {boolean}
  */
 export function isFloat(value: unknown): value is number {
 	if (!isNumber(value)) return false
@@ -42,8 +42,8 @@ export function isFloat(value: unknown): value is number {
 /**
  * @title isInteger
  * @description 判断数是整型
- * @param value {unknown} 待检测的数据类型
- * @returns boolean
+ * @param {unknown} value 待检测的数据类型
+ * @returns {boolean}
  */
 export function isInteger(value: unknown): value is number {
 	if (!isNumber(value)) return false
@@ -53,7 +53,7 @@ export function isInteger(value: unknown): value is number {
 /**
  * @title isBigInt
  * @description 是bigInt类型
- * @param value 待检测的数据类型
+ * @param {unknown} value 待检测的数据类型
  * @returns {boolean}
  */
 export const isBigInt = (value: unknown): value is bigint => type(value) === 'BigInt'
@@ -64,8 +64,8 @@ export const isBigInt = (value: unknown): value is bigint => type(value) === 'Bi
  * @description 是数字/数字字符串
  * @support: Number, NumberString
  * @unsupported: Infinity, Function
- * @param value any
- * @returns boolean
+ * @param {unknown} value
+ * @returns {boolean}
  * @version 0.1.0
  */
 export function likeNumber(value: unknown): value is `${number}` {

@@ -3,7 +3,7 @@ import { isEmpty } from "./empty"
 /**
  * @title isIterator
  * @description 是iterator
- * @param value {unknown}
+ * @param {unknown} value
  * @returns {boolean}
  */
 export function isIterator(value: unknown): value is IterableIterator<unknown> {
@@ -14,7 +14,7 @@ export function isIterator(value: unknown): value is IterableIterator<unknown> {
 /**
  * @title isArrayIterator
  * @description 是 Array Iterator
- * @param value {unknown}
+ * @param {unknown} value
  * @returns {boolean}
  */
 export function isArrayIterator(value: unknown): value is IterableIterator<[number, unknown]> {
@@ -25,7 +25,7 @@ export function isArrayIterator(value: unknown): value is IterableIterator<[numb
 /**
  * @title isMapIterator
  * @description 是 Map Iterator
- * @param value {unknown}
+ * @param {unknown} value
  * @returns {boolean}
  */
 export function isMapIterator(value: unknown): value is IterableIterator<[unknown, unknown]> {
@@ -36,7 +36,7 @@ export function isMapIterator(value: unknown): value is IterableIterator<[unknow
 /**
  * @title isSetIterator
  * @description 是 Set Iterator
- * @param value {unknown}
+ * @param {unknown} value
  * @returns {boolean}
  */
 export function isSetIterator(value: unknown): value is IterableIterator<[unknown, unknown]> {

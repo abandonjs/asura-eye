@@ -2,7 +2,7 @@ import { type } from "./type";
 
 /**
  * @title isError
- * @param value {unknown}
+ * @param {unknown} value
  * @returns {boolean}
  */
 export function isError(value: unknown): value is Error{

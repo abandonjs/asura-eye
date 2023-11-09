@@ -1,18 +1,18 @@
 /**
- * 
- * @param value 
- * @param InStance 
- * @returns 
+ * @title isInstance
+ * @param {unknown} value 
+ * @param {unknown} InStance 
+ * @returns {boolean}
  */
-export function isInstance(value: any, InStance: any) {
+export function isInstance(value: unknown, InStance: unknown) {
 	if (!value) return false
-	if (!value.__proto__) return false
-	if (!InStance.prototype) return false
+	if (!(value as any).__proto__) return false
+	if (!(InStance as any).prototype) return false
 
 
 	while (value) {
-		if (value.__proto__ === InStance.prototype) return true
-		else value = value.__proto__
+		if ((value as any).__proto__ === (InStance as any).prototype) return true
+		else value = (value as any).__proto__
 	}
 
 	return false
