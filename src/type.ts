@@ -1,4 +1,3 @@
-import { isArray } from "./isArray"
 import { isIterator } from "./iterator"
 
 /**
@@ -31,7 +30,7 @@ export function type(param: unknown): typeResult {
  * @return {string[]} 类型名称
  */
 export function types(params: unknown[], hasRepeat: boolean = false): typeResult[] {
-  if (!isArray(params)) return []
+  if (!Array.isArray(params)) return []
   const result = params.map(i => type(i)) || []
   return hasRepeat ? result : [...new Set(result)]
 }

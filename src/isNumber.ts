@@ -2,7 +2,6 @@ import { type } from './type'
 import { INFINITY } from './constants'
 import { isString } from './isString'
 import { isEmpty } from './empty'
-import { isArray } from './isArray'
 
 /**
  * @title isNumber
@@ -76,7 +75,6 @@ export function likeNumber(value: unknown): value is `${number}` {
 
 	if (
 		isEmpty(value)
-		|| isArray(value)
 		|| value === ''
 	) return false
 
