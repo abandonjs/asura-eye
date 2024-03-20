@@ -1,6 +1,6 @@
 import { test } from 'unit-testing-js'
 import { MAX_VALUES_NUMBER } from '../constants'
-import { likeNumber, isFloat, isEffectNumber } from '..'
+import { likeNumber, isFloat, isEffectNumber, isNumber } from '..'
 
 test('isEffectNumber', isEffectNumber,
 	{ param: 1, tobe: true },

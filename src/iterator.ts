@@ -1,4 +1,4 @@
-import { isEmpty } from "./empty"
+import { isEmpty } from './empty'
 
 /**
  * @title isIterator
@@ -7,8 +7,8 @@ import { isEmpty } from "./empty"
  * @returns {boolean}
  */
 export function isIterator(value: unknown): value is IterableIterator<unknown> {
-	if (typeof value !== 'object' || isEmpty(value)) return false
-	return /Iterator\]$/.test((value as Record<string, unknown>).toString())
+  if (typeof value !== 'object' || isEmpty(value)) return false
+  return /Iterator\]$/.test((value as Record<string, unknown>).toString())
 }
 
 /**
@@ -17,9 +17,13 @@ export function isIterator(value: unknown): value is IterableIterator<unknown> {
  * @param {unknown} value
  * @returns {boolean}
  */
-export function isArrayIterator(value: unknown): value is IterableIterator<[number, unknown]> {
-	if (typeof value !== 'object' || isEmpty(value)) return false
-	return (value as Record<string, unknown>).toString() === '[object Array Iterator]'
+export function isArrayIterator(
+  value: unknown
+): value is IterableIterator<[number, unknown]> {
+  if (typeof value !== 'object' || isEmpty(value)) return false
+  return (
+    (value as Record<string, unknown>).toString() === '[object Array Iterator]'
+  )
 }
 
 /**
@@ -28,9 +32,13 @@ export function isArrayIterator(value: unknown): value is IterableIterator<[numb
  * @param {unknown} value
  * @returns {boolean}
  */
-export function isMapIterator(value: unknown): value is IterableIterator<[unknown, unknown]> {
-	if (typeof value !== 'object' || isEmpty(value)) return false
-	return (value as Record<string, unknown>).toString() === '[object Map Iterator]'
+export function isMapIterator(
+  value: unknown
+): value is IterableIterator<[unknown, unknown]> {
+  if (typeof value !== 'object' || isEmpty(value)) return false
+  return (
+    (value as Record<string, unknown>).toString() === '[object Map Iterator]'
+  )
 }
 
 /**
@@ -39,7 +47,11 @@ export function isMapIterator(value: unknown): value is IterableIterator<[unknow
  * @param {unknown} value
  * @returns {boolean}
  */
-export function isSetIterator(value: unknown): value is IterableIterator<[unknown, unknown]> {
-	if (typeof value !== 'object' || isEmpty(value)) return false
-	return (value as Record<string, unknown>).toString() === '[object Set Iterator]'
+export function isSetIterator(
+  value: unknown
+): value is IterableIterator<[unknown, unknown]> {
+  if (typeof value !== 'object' || isEmpty(value)) return false
+  return (
+    (value as Record<string, unknown>).toString() === '[object Set Iterator]'
+  )
 }

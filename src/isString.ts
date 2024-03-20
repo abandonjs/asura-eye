@@ -7,7 +7,7 @@ import { isObject } from './isObject'
  * @returns {boolean}
  */
 export function isString(value: unknown): value is string {
-	return typeof value === 'string'
+  return typeof value === 'string'
 }
 
 /**
@@ -16,12 +16,13 @@ export function isString(value: unknown): value is string {
  * @param {unknown} val 待判断字符串
  * @returns {boolean}
  */
-export function isJsonString<T extends Record<string, unknown>>(val: unknown): val is T {
-	if (!isString(val)) return false
-	try {
-		const obj: T = JSON.parse(val)
-		return isObject<T>(obj)
-	} catch (e) {
-		return false
-	}
+export function isJsonString<T extends Record<string, unknown>>(
+  val: unknown
+): val is T {
+  if (!isString(val)) return false
+  try {
+    return isObject<T>(JSON.parse(val))
+  } catch (e) {
+    return false
+  }
 }

@@ -1,4 +1,4 @@
-import { isIterator } from "./iterator"
+import { isIterator } from './iterator'
 
 /**
  * @title type
@@ -7,7 +7,19 @@ import { isIterator } from "./iterator"
  * @return {string} 类型名称
  * @lastUpdate 0.2.0
  */
-export type typeResult = 'Array' | 'Object' | 'Function' | 'AsyncFunction' | 'GeneratorFunction' | 'String' | 'Number' | 'NaN' | 'RegExp' | 'Date' | 'Undefined' | string
+export type typeResult =
+  | 'Array'
+  | 'Object'
+  | 'Function'
+  | 'AsyncFunction'
+  | 'GeneratorFunction'
+  | 'String'
+  | 'Number'
+  | 'NaN'
+  | 'RegExp'
+  | 'Date'
+  | 'Undefined'
+  | string
 
 export function type(param: unknown): typeResult {
   try {
@@ -29,7 +41,10 @@ export function type(param: unknown): typeResult {
  * @param {boolean} [hasRepeat=false] 保留重复类型
  * @return {string[]} 类型名称
  */
-export function types(params: unknown[], hasRepeat: boolean = false): typeResult[] {
+export function types(
+  params: unknown[],
+  hasRepeat: boolean = false
+): typeResult[] {
   if (!Array.isArray(params)) return []
   const result = params.map(i => type(i)) || []
   return hasRepeat ? result : [...new Set(result)]

@@ -11,11 +11,11 @@ export type FileType = 'Image' | 'Video' | 'PDF' | 'Word' | 'Excel'
  * @version 0.1.0
  */
 export const FileTypeMap = new Map<FileType, string[]>([
-	['Image', ['png', 'jpeg', 'jpg', 'png', 'bmp']],
-	['Video', ['mp4', 'webm', 'ogg']],
-	['PDF', ['pdf']],
-	['Word', ['doc', 'docx']],
-	['Excel', ['.xlsx', '.xls', '.csv']],
+  ['Image', ['png', 'jpeg', 'jpg', 'png', 'bmp']],
+  ['Video', ['mp4', 'webm', 'ogg']],
+  ['PDF', ['pdf']],
+  ['Word', ['doc', 'docx']],
+  ['Excel', ['.xlsx', '.xls', '.csv']]
 ])
 
 /**
@@ -26,23 +26,26 @@ export const FileTypeMap = new Map<FileType, string[]>([
  * @returns boolean
  * @version 0.1.0
  */
-export function isFileExtension(fileName: string, list: string[] = []): boolean {
-	if (typeof fileName !== 'string') return false;
-	if (/\.[a-zA-Z0-9]{1,}/.exec(fileName) === null) return false
-	if (list.length === 0) return true
-	const name = fileName.toLowerCase();
-	return list.some(i => name.endsWith(i) === true)
+export function isFileExtension(
+  fileName: string,
+  list: string[] = []
+): boolean {
+  if (typeof fileName !== 'string') return false
+  if (/\.[a-zA-Z0-9]{1,}/.exec(fileName) === null) return false
+  if (list.length === 0) return true
+  const name = fileName.toLowerCase()
+  return list.some(i => name.endsWith(i) === true)
 }
 
 /**
  * @title isFile
  * @param {string} fileName
- * @param {FileType} type 
+ * @param {FileType} type
  * @returns {boolean}
  * @version 0.1.0
  */
 export function isFile(fileName: string, type: FileType): boolean {
-	return isFileExtension(fileName, FileTypeMap.get(type))
+  return isFileExtension(fileName, FileTypeMap.get(type))
 }
 
 /**
@@ -52,7 +55,7 @@ export function isFile(fileName: string, type: FileType): boolean {
  * @version 0.1.0
  */
 export function isImageFile(fileName: string): boolean {
-	return isFileExtension(fileName, FileTypeMap.get('Image'))
+  return isFileExtension(fileName, FileTypeMap.get('Image'))
 }
 
 /**
@@ -62,7 +65,7 @@ export function isImageFile(fileName: string): boolean {
  * @version 0.1.0
  */
 export function isVideoFile(fileName: string): boolean {
-	return isFileExtension(fileName, FileTypeMap.get('Video'))
+  return isFileExtension(fileName, FileTypeMap.get('Video'))
 }
 
 /**
@@ -72,7 +75,7 @@ export function isVideoFile(fileName: string): boolean {
  * @version 0.1.0
  */
 export function isPdfFile(fileName: string): boolean {
-	return isFileExtension(fileName, FileTypeMap.get('PDF'))
+  return isFileExtension(fileName, FileTypeMap.get('PDF'))
 }
 
 /**
@@ -82,7 +85,7 @@ export function isPdfFile(fileName: string): boolean {
  * @version 0.1.0
  */
 export function isWordFile(fileName: string): boolean {
-	return isFileExtension(fileName, FileTypeMap.get('Word'))
+  return isFileExtension(fileName, FileTypeMap.get('Word'))
 }
 
 /**
@@ -92,14 +95,14 @@ export function isWordFile(fileName: string): boolean {
  * @version 0.1.0
  */
 export function isExcelFile(fileName: string): boolean {
-	return isFileExtension(fileName, FileTypeMap.get('Excel'))
+  return isFileExtension(fileName, FileTypeMap.get('Excel'))
 }
 
 /**
  * @title isClient
  * @description 是否为客户端
  */
-export const isClient = typeof window !== 'undefined';
+export const isClient = typeof window !== 'undefined'
 
 /**
  * @title isBoolean
@@ -107,26 +110,34 @@ export const isClient = typeof window !== 'undefined';
  * @param {unknown} val
  * @returns {boolean}
  */
-export const isBoolean = (val: unknown): val is boolean => typeof val === 'boolean';
+export const isBoolean = (val: unknown): val is boolean =>
+  typeof val === 'boolean'
 
 /**
  * @title isWindow
  * @description 是否为window端
- * @param {unknown} val 
+ * @param {unknown} val
  * @returns {boolean}
  */
-export const isWindow = (val: unknown): val is Window => typeof window !== 'undefined' && toString.call(val) === '[object Window]';
+export const isWindow = (val: unknown): val is Window =>
+  typeof window !== 'undefined' && toString.call(val) === '[object Window]'
 
 /**
  * @title isIOS
  * @returns {boolean}
  */
-export const isIOS = /* #__PURE__ */ isClient && window?.navigator?.userAgent && /iP(ad|hone|od)/.test(window.navigator.userAgent)
+export const isIOS =
+  /* #__PURE__ */ isClient &&
+  window?.navigator?.userAgent &&
+  /iP(ad|hone|od)/.test(window.navigator.userAgent)
 
 /**
  * @title hasOwn
- * @param {object} val 
- * @param {string} key 
+ * @param {object} val
+ * @param {string} key
  * @returns {boolean}
  */
-export const hasOwn = <T extends object, K extends keyof T>(val: T, key: K): key is K => Object.prototype.hasOwnProperty.call(val, key);
+export const hasOwn = <T extends object, K extends keyof T>(
+  val: T,
+  key: K
+): key is K => Object.prototype.hasOwnProperty.call(val, key)

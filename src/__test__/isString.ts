@@ -15,6 +15,6 @@ test('isString', isString,
 
 test('isJsonString', isJsonString,
 	{ param: '', tobe: false },
-	{ param: '{}', tobe: {} },
-	{ param: '{"a":123}', tobe: { a: 123 } },
+	{ param: '{}', tobe: true },
+	{ param: JSON.stringify({ a: 123 }), tobe: true },
 )

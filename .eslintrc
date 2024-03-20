@@ -14,7 +14,7 @@
     "es6": true
   },
   "parserOptions": {
-    "project": "./tsconfig.json",
+    "project": true,
     "ecmaVersion": 2022,
     "sourceType": "module",
     "ecmaFeatures": {
