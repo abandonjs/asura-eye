@@ -4,7 +4,6 @@ lib/
 src/*/__test__
 src/__test__
 md.ts
-rollup.config.ts
 config/
 commitlint*
 jest.config.js

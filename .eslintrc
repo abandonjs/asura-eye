@@ -14,8 +14,8 @@
     "es6": true
   },
   "parserOptions": {
-    "project": true,
-    "ecmaVersion": 2022,
+    "project": ["./tsconfig.json", "@typescript-eslint/parser"],
+    "ecmaVersion": "latest",
     "sourceType": "module",
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true

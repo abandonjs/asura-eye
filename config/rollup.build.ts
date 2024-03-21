@@ -3,7 +3,6 @@ import rollupTypescript from 'rollup-plugin-typescript2'
 import babel from '@rollup/plugin-babel'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
-import { eslint } from 'rollup-plugin-eslint'
 import pkg from '../package.json'
 
 const paths = {
@@ -30,15 +29,6 @@ const rollupConfig = {
     }
   ],
   plugins: [
-    // 验证导入的文件
-    // eslint({
-    //   // throwOnError: true, // lint 结果有错误将会抛出异常
-    //   throwOnError: false, // lint 结果有错误将会抛出异常
-    //   throwOnWarning: true,
-    //   include: ['src/**/*.ts'],
-    //   exclude: ['node_modules/**', 'lib/**', '*.js', 'dist/**']
-    // }),
-
     // 使得 rollup 支持 commonjs 规范，识别 commonjs 规范的依赖
     commonjs(),
 
@@ -54,9 +44,8 @@ const rollupConfig = {
       include: 'src',
       // babel 默认不支持 ts 需要手动添加
       extensions: ['.js', '.jsx', '.es6', '.es', '.mjs', '.ts']
-    }),
+    })
     // terser()
-
   ]
 }
 
