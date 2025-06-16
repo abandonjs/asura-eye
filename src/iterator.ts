@@ -8,7 +8,6 @@ import { isEmpty } from './empty'
  */
 export function isIterator(value: unknown): value is IterableIterator<unknown> {
   if (typeof value !== 'object' || isEmpty(value)) return false
-  // return /Iterator\]$/.test((value as Record<string, unknown>).toString())
   return /Iterator\]$/.test(Object.prototype.toString.call(value))
 }
 
@@ -19,13 +18,10 @@ export function isIterator(value: unknown): value is IterableIterator<unknown> {
  * @returns {boolean}
  */
 export function isArrayIterator(
-  value: unknown
+  value: unknown,
 ): value is IterableIterator<[number, unknown]> {
   if (typeof value !== 'object' || isEmpty(value)) return false
-  return (
-    // (value as Record<string, unknown>).toString() === '[object Array Iterator]'
-    Object.prototype.toString.call(value) === '[object Array Iterator]'
-  )
+  return Object.prototype.toString.call(value) === '[object Array Iterator]'
 }
 
 /**
@@ -35,13 +31,10 @@ export function isArrayIterator(
  * @returns {boolean}
  */
 export function isMapIterator(
-  value: unknown
+  value: unknown,
 ): value is IterableIterator<[unknown, unknown]> {
   if (typeof value !== 'object' || isEmpty(value)) return false
-  return (
-    // (value as Record<string, unknown>).toString() === '[object Map Iterator]'
-    Object.prototype.toString.call(value) === '[object Map Iterator]'
-  )
+  return Object.prototype.toString.call(value) === '[object Map Iterator]'
 }
 
 /**
@@ -51,11 +44,8 @@ export function isMapIterator(
  * @returns {boolean}
  */
 export function isSetIterator(
-  value: unknown
+  value: unknown,
 ): value is IterableIterator<[unknown, unknown]> {
   if (typeof value !== 'object' || isEmpty(value)) return false
-  return (
-    Object.prototype.toString.call(value) === '[object Set Iterator]'
-    // (value as Record<string, unknown>).toString() === '[object Set Iterator]'
-  )
+  return Object.prototype.toString.call(value) === '[object Set Iterator]'
 }
