@@ -1,11 +1,24 @@
 /**
+ * @title isNoEmpty<T>
+ * @description 是有效值 (非undefined , null, NaN, '')
+ * @param {unknown} value
+ * @returns {boolean}
+ * @version 0.3.0
+ */
+export function isValid<T = unknown>(value: unknown): value is T {
+  return (
+    value !== undefined && value !== null && value === value && value !== ''
+  )
+}
+
+/**
  * @title isEmpty
  * @description 是无效值 undefined , null, NaN
  * @param value {unknown} 待值
  * @returns {boolean}
  */
-export function isEmpty(value: unknown): value is (undefined | null) {
-	return value === undefined || value === null || value !== value
+export function isEmpty(value: unknown): value is undefined | null {
+  return value === undefined || value === null || value !== value
 }
 
 /**
@@ -16,7 +29,7 @@ export function isEmpty(value: unknown): value is (undefined | null) {
  * @version 0.3.0
  */
 export function isNoEmpty<T = unknown>(value: unknown): value is T {
-	return value !== undefined && value !== null && value === value
+  return value !== undefined && value !== null && value === value
 }
 
 /**
@@ -25,7 +38,7 @@ export function isNoEmpty<T = unknown>(value: unknown): value is T {
  * @returns {boolean}
  */
 export function isNull(value: unknown): value is null {
-	return value === null
+  return value === null
 }
 
 /**
@@ -34,7 +47,7 @@ export function isNull(value: unknown): value is null {
  * @returns {boolean}
  */
 export function isNoNull<T = unknown>(value: unknown): value is T {
-	return value !== null
+  return value !== null
 }
 
 /**
@@ -43,7 +56,7 @@ export function isNoNull<T = unknown>(value: unknown): value is T {
  * @returns {boolean}
  */
 export function isUndefined(value: unknown): value is undefined {
-	return value === undefined
+  return value === undefined
 }
 
 /**
@@ -52,7 +65,7 @@ export function isUndefined(value: unknown): value is undefined {
  * @returns {boolean}
  */
 export function isNoUndefined<T = unknown>(value: unknown): value is T {
-	return value !== undefined
+  return value !== undefined
 }
 
 /**
